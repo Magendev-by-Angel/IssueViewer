@@ -52,7 +52,9 @@ const Issue = ({ title, id, state, multiplier, number, link }: props) => {
     <Flex
       key={id}
       justify="center"
-      transition={`opacity 300ms ease-in-out ${multiplier * 100}ms`}
+      transition={`opacity 300ms ease-in-out ${
+        multiplier * 100
+      }ms, box-shadow 300ms ease-in-out`}
       opacity={opacity}
       maxW="100%"
       minW="100%"
@@ -63,7 +65,9 @@ const Issue = ({ title, id, state, multiplier, number, link }: props) => {
       padding={3}
       mb={3}
       direction="column"
-      _hover
+      _hover={{
+        boxShadow: "0 0 10px #ffffff5c",
+      }}
     >
       <DotStatus state={state} />
 
@@ -73,8 +77,7 @@ const Issue = ({ title, id, state, multiplier, number, link }: props) => {
         whiteSpace="nowrap"
         overflow="hidden"
         textOverflow="ellipsis"
-        maxW="95%"
-        
+        maxW="80%"
       >
         <Link href={link} isExternal>
           <ExternalLinkIcon mx="2px" />
