@@ -51,8 +51,8 @@ const SearchButton = ({
 };
 
 const RepositorySearch = () => {
-  const [owner, setOwner] = useState<string>("angelzxz1");
-  const [name, setName] = useState<string>("Teac");
+  const [owner, setOwner] = useState<string>("");
+  const [name, setName] = useState<string>("");
   const [isSearching, setIsSearching] = useState<boolean>(false);
   const [data, setData] = useState([]);
   const [alert, setAlert] = useState({ l: "inherit", r: "inherit" });
