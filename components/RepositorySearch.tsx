@@ -9,6 +9,7 @@ interface props {
   setAlert: any;
   setData: any;
   setIsSearching: any;
+  setTitle: any;
 }
 const SearchButton = ({
   owner,
@@ -16,6 +17,7 @@ const SearchButton = ({
   setAlert,
   setData,
   setIsSearching,
+  setTitle,
 }: props) => {
   return (
     <Button
@@ -29,7 +31,7 @@ const SearchButton = ({
           const { data } = await axios.get(
             `https://api.github.com/repos/${owner}/${name}/issues`
           );
-
+          setTitle(`${name} issues`);
           setData(data);
           setIsSearching(false);
         } else {
@@ -64,6 +66,7 @@ const RepositorySearch = () => {
     setAlert: setAlert,
     setData: setData,
     setIsSearching: setIsSearching,
+    setTitle: setTitle,
   };
   return (
     <Box w="100%">
