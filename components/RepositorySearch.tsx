@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Issue from "./Issue";
 import { Box, Input, Flex, Grid, Button, Heading } from "@chakra-ui/react";
+import Head from "next/head";
 interface props {
   owner: string;
   name: string;
@@ -56,6 +57,7 @@ const RepositorySearch = () => {
   const [isSearching, setIsSearching] = useState<boolean>(false);
   const [data, setData] = useState([]);
   const [alert, setAlert] = useState({ l: "inherit", r: "inherit" });
+  const [title, setTitle] = useState("Repo Search");
   const propButton = {
     owner: owner,
     name: name,
@@ -65,6 +67,9 @@ const RepositorySearch = () => {
   };
   return (
     <Box w="100%">
+      <Head>
+        <title>{title}</title>
+      </Head>
       <Flex w="100%" align="center" transition="height 500ms ease-in-out">
         <Grid
           w="100%"
