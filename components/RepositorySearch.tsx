@@ -31,7 +31,9 @@ const SearchButton = ({
           const { data } = await axios.get(
             `https://api.github.com/repos/${owner}/${name}/issues`
           );
-          setTitle(`${name} issues`);
+          setTitle(
+            `${name.charAt(0).toUpperCase() + name.slice(1)} repo issues`
+          );
           setData(data);
           setIsSearching(false);
         } else {
